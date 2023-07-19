@@ -6,13 +6,20 @@ public class Noble {
     {
         Arrays.sort(Array);
         int PreviousCount=0;
-        for (int i=Array.length-1;i>=0;i--)
+        int index=0;
+        for (int i=Array.length-1;i>0;i--)
         {
-            if(Array[i]==PreviousCount)
+            index++;
+
+
+            if(Array[i]!=Array[i-1])
+            {
+                PreviousCount=index;
+            }
+            if(PreviousCount==Array[i-1])
             {
                 return 1;
             }
-            PreviousCount++;
         }
         return -1;
     }
